@@ -1,0 +1,104 @@
+.aside {
+  justify-self: stretch;
+  flex: 0 0 18%;
+  background-color: var(--grey-dark-1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.5rem 0;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
+  &__list {
+    @include respond(tab-port) {
+      display: flex;
+    }
+  }
+
+  &__items {
+    color: var(--grey-light-1);
+    cursor: pointer;
+    padding: 1.5rem 1.5rem 1.5rem 4rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+
+    @include respond(small-phone) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 100%;
+      transform: scaleY(0);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: transform 0.15s ease-in, background-color 0.1s, width 0.3s 0.15s cubic-bezier(1, 0, 0, 1), -webkit-transform 0.15s ease-in;
+      background-color: var(--color-primary);
+    }
+
+    &:first-child::before {
+      background-color: var(--color-primary);
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+    &:hover::before {
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+    &:active::before {
+      background: var(--primary-dark);
+    }
+
+    @include respond(tab-port) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
+    margin-right: 2rem;
+
+    @include respond(small-phone) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: inherit;
+
+    
+  }
+
+  &__legal {
+    color: var(--grey-light-4);
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 2.5rem 2.5rem 0 2.5rem;
+    align-self: center;
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+}

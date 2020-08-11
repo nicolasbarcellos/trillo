@@ -1,0 +1,136 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey-light-2);
+  background-color: var(--color-white);
+  height: 7rem;
+
+  @include respond(ultra-phone) {
+    align-content: space-around;
+    height: 11rem;
+  }
+
+  &__logo-box {
+    margin-left: 2rem;
+  }
+
+  &__logo {
+    height: 3.25rem;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 40%;
+
+    @include respond(ultra-phone) {
+      flex: 0 0 100%;
+      order: 1;
+    }
+
+    &-search {
+      color: var(--grey-dark-4);
+      font-family: inherit;
+      font-size: 1.3rem;
+      width: 90%;
+      border: none;
+      background: var(--grey-light-2);
+      padding: 0.7rem 2rem;
+      border-radius: 50px;
+      margin-right: -3.25rem;
+      transition: all 0.3s;
+
+      &:focus {
+        outline: none;
+        width: 100%;
+      }
+
+      &::-webkit-input-placeholder {
+        font-weight: 100;
+        color: var(--grey-light-4);
+      }
+    }
+
+    &-btn {
+      border: none;
+      border-radius: 50px;
+      transition: transform 0.1s;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+
+    &-icon {
+      height: 2rem;
+      width: 2rem;
+      fill: var(--grey-dark-3);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-self: stretch;
+
+    & > * {
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      align-self: stretch;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--grey-light-2);
+      }
+    }
+
+    &-icon-box {
+      position: relative;
+      transition: background 0.3s;
+    }
+
+    &-icon {
+      height: 2.25rem;
+      width: 2.25rem;
+      fill: var(--grey-dark-2);
+    }
+
+    &-notification {
+      position: absolute;
+      height: 1.6rem;
+      width: 1.6rem;
+      top: 1.6rem;
+      right: 1.6rem;
+      font-size: 0.8rem;
+      color: var(--color-white);
+      background-color: var(--color-primary);
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-user-box {
+      transition: background 0.3s;
+    }
+
+    &-user-img {
+      display: inline-block;
+      height: 3.75rem;
+      border-radius: 50px;
+    }
+
+    &-user-name {
+      display: inline-block;
+      font-size: 1.3rem;
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+html {
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-medium) {
+    font-size: 50%;
+  }
+
+
+}
+
+body {
+  box-sizing: border-box;
+  background-image: linear-gradient(to right bottom, var(--primary-light), var(--primary-dark));
+  background-size: cover;
+  min-height: 100vh;
+  padding: 8rem 0;
+
+  @include respond(tab-land) {
+    width: auto 0;
+    padding: 0;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  background-color: var(--grey-light-1);
+  margin: 0 auto;
+  max-width: var(--container-width);
+  box-shadow: var(--shadow-dark);
+
+  @include respond(tab-land) {
+    max-width: 100%;
+  }
+}
+
+.content {
+  display: flex;
+  font-size: 1.4rem;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
